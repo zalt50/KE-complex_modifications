@@ -1,0 +1,27 @@
+{
+    "title": "AquaSKK workaround",
+    "rules": [
+        {
+            "description": "Change control+j to 英数 & かな in Microsoft PowerPoint.",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("j", ["control"], ["caps_lock", "shift", "option"]) %>,
+                    "to": <%= to([["japanese_eisuu"], ["japanese_kana"]]) %>,
+                    "conditions": [ <%= frontmost_application_if("microsoft_powerpoint") %> ]
+                }
+            ]
+        },
+        {
+            "description": "Change control+j to 英数 & かな in Microsoft Excel.",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": <%= from("j", ["control"], ["caps_lock", "shift", "option"]) %>,
+                    "to": <%= to([["japanese_eisuu"], ["japanese_kana"]]) %>,
+                    "conditions": [ <%= frontmost_application_if("microsoft_excel") %> ]
+                }
+            ]
+        }
+    ]
+}
